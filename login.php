@@ -15,7 +15,7 @@
 
 
   <div class="content">
-    <form method="post" action="backend/auth/logining.php">
+    <form method="post" action="cookies.php">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
 
