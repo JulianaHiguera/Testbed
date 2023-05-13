@@ -1,3 +1,7 @@
+<?php
+$rutabase = dirname(dirname(dirname(__FILE__)));
+?>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <nav class="menu">
   <div class="menu-icon">
@@ -13,12 +17,24 @@
         </span></a></li>
     <li><a href="#"><i class="fas fa-cog"></i> <span>Configuración</span></a></li>
     <?php
-    if (!isset($_COOKIE['logged_in']) || $_COOKIE['logged_in'] !== 'true') { ?>
-      <li><a href="login.php"><i class="fas fa-sign-in"></i> <span>Iniciar sesion</span></a></li>
-    <?php } else { ?>
-      <li><a href="logout.php"><i class="fas fa-power-off"></i> <span>Cerrar sesion</span></a></li>
-    <?php }
+
+    $esta_logueado = true; // supongamos que el usuario está conectado
+    $ruta_anterior = dirname($_SERVER['PHP_SELF'], 1);
+
+    if (!isset($_COOKIE['logged_in']) || $_COOKIE['logged_in'] !== 'true') {
+      $rutaDestino = 'login.php';
+      $nameDestino = "Iniciar Sesion";
+      $iconoFa = "fas fa-sign-in";
+    } else {
+      $rutaDestino = 'logout.php';
+      $nameDestino = "Cerrar Sesion";
+      $iconoFa = "fas fa-power-off";
+    }
+
     ?>
+    <li><a href="<?php echo $rutaDestino ?>"><i class="<?php echo $iconoFa ?>"></i> <span>
+          <?php echo $nameDestino ?>
+        </span></a></li>
   </ul>
 </nav>
 </ul>
