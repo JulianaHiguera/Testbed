@@ -26,6 +26,14 @@ if ($num_rows_affected = $db->changes()) {
     echo "Error al insertar el registro";
 }
 
+if ($result) {
+    // Registro insertado correctamente
+    echo "Registro insertado correctamente";
+} else {
+    // Error al ejecutar la consulta
+    $error = $db->lastErrorMsg();
+    echo "Error: " . $error;
+}
 
 // Cierra la conexión a la base de datos
 $db->close();

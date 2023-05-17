@@ -32,6 +32,7 @@ def consulta():
 
 def consulta_2():
     print('*' * 10)
+    print(sqlite3.sqlite_version)
     ruta_archivo = os.path.abspath(__file__)
     directorio_padre = os.path.dirname(os.path.dirname(ruta_archivo))
     ruta_bd = os.path.join(directorio_padre, "database", "tsbd.db")
