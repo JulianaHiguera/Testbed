@@ -7,7 +7,11 @@
 </head>
 
 <body>
-  <h1>Registro de usuario</h1>
+  <?php include 'frontend/includes/menu.php'; ?>
+  <div class="title-container">
+    <h1>Registro de usuario</h1>
+  </div>
+
   <form action="backend/auth/register.php" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre"><br>
