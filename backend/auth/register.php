@@ -1,6 +1,7 @@
 <?php
 // Conexión a la base de datos
 $rutadb = join('/', [dirname(dirname(__FILE__)), 'database', 'tsbd.db']);
+echo $rutadb;
 $db = new SQLite3($rutadb);
 
 // Recupera los datos del formulario
