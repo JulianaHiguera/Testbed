@@ -1,6 +1,7 @@
 <?php
 // Conexión a la base de datos
 $rutadb = join('/', [dirname(dirname(__FILE__)), 'database', 'tsbd.db']);
+echo $rutadb;
 $db = new SQLite3($rutadb);
 
 // Recupera los datos del formulario
@@ -25,6 +26,14 @@ if ($num_rows_affected = $db->changes()) {
     echo "Error al insertar el registro";
 }
 
+if ($result) {
+    // Registro insertado correctamente
+    echo "Registro insertado correctamente";
+} else {
+    // Error al ejecutar la consulta
+    $error = $db->lastErrorMsg();
+    echo "Error: " . $error;
+}
 
 // Cierra la conexión a la base de datos
 $db->close();
