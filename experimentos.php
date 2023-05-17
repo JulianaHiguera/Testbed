@@ -3,12 +3,12 @@
 
 <head>
   <title>Formulario de Reserva</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="frontend/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
-  <?php include 'menu.php'; ?>
+  <?php include('frontend/includes/menu.php'); ?>
   <div class="title-container">
     <h1>Reservation Form</h1>
   </div>
