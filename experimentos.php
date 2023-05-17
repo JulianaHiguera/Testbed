@@ -32,6 +32,25 @@
       </form>
     </div>
   </div>
+  <form action="crear-contenedor.php" method="post">
+    <label for="sistema-operativo">Selecciona el sistema operativo:</label>
+    <select name="sistema-operativo" id="sistema-operativo">
+      <option value="ubuntu">Ubuntu</option>
+      <option value="debian">Debian</option>
+      <!-- Agrega más opciones según tus necesidades -->
+    </select>
+
+    <label for="duracion">Selecciona la duración:</label>
+    <select name="duracion" id="duracion">
+      <option value="10">10 minutos</option>
+      <option value="20">20 minutos</option>
+      <option value="30">30 minutos</option>
+      <!-- Agrega más opciones según tus necesidades -->
+    </select>
+
+    <input type="submit" value="Crear contenedor">
+  </form>
+
   <script src="menu.js"></script>
 
   <!-- Agregar el archivo JavaScript de flatpickr -->
