@@ -3,7 +3,7 @@
 // Definiendo una función que retorna algo
 function login()
 {
-   $rutadb = join(DIRECTORY_SEPARATOR, [dirname(dirname(__FILE__)), 'database', 'tsbd.db']);
+   $rutadb = join('/', [dirname(dirname(__FILE__)), 'database', 'tsbd.db']);
    $db = new SQLite3($rutadb);
    $query = "SELECT * FROM usuarios WHERE usuario = :usuario AND contrasena = :password";
    $stmt = $db->prepare($query);
