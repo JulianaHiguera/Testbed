@@ -1,56 +1,34 @@
 <?php
-// Datos de configuración de Docker
-$dockerHost = 'unix:///var/run/docker.sock'; // o 'tcp://localhost:2375' para conexión a través de TCP
-$dockerEndpoint = $dockerHost . '/v1.41/containers/create';
 
-// Configuración del nuevo contenedor
-$containerName = 'mi_contenedor';
-$image = 'imagen_docker:tag';
+require 'vendor/autoload.php';
 
-// Crear solicitud para crear el contenedor
-$data = array(
-    'Image' => $image,
-    'name' => $containerName
-);
+use Docker\Docker;
+use Docker\API\Model\ContainersCreatePostBody;
+use Docker\API\Model\HostConfig;
+use Docker\API\Model\NetworkingConfig;
 
-$options = array(
-    CURLOPT_URL => $dockerEndpoint,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => json_encode($data),
-    CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
-    CURLOPT_RETURNTRANSFER => true
-);
+// Crea una instancia de Docker
+$docker = Docker::create();
 
-// Enviar la solicitud a la API de Docker
-$ch = curl_init();
-curl_setopt_array($ch, $options);
-$response = curl_exec($ch);
-curl_close($ch);
+// Configura las opciones del contenedor
+$containerConfig = new ContainersCreatePostBody();
+$containerConfig->setImage('ubuntu');
+$containerConfig->setCmd(['echo', 'Hello World']);
 
-// Decodificar la respuesta de la API de Docker
-$containerInfo = json_decode($response, true);
+// Configura las opciones de red (si es necesario)
+$networkingConfig = new NetworkingConfig();
 
-// Obtener el ID del contenedor creado
-$containerId = $containerInfo['Id'];
+// Configura las opciones del contenedor en el host
+$hostConfig = new HostConfig();
+$hostConfig->setNetworkMode('bridge');
+$hostConfig->setNetworkingConfig($networkingConfig);
 
-// Iniciar el contenedor
-$dockerStartEndpoint = $dockerHost . '/v1.41/containers/' . $containerId . '/start';
+$containerConfig->setHostConfig($hostConfig);
 
-$options = array(
-    CURLOPT_URL => $dockerStartEndpoint,
-    CURLOPT_POST => true,
-    CURLOPT_RETURNTRANSFER => true
-);
+// Crea el contenedor
+$container = $docker->containerCreate($containerConfig);
 
-$ch = curl_init();
-curl_setopt_array($ch, $options);
-$response = curl_exec($ch);
-curl_close($ch);
+// Inicia el contenedor
+$docker->containerStart($container->getId());
 
-// Verificar el resultado de la solicitud
-if ($response === false) {
-    echo 'Error al crear el contenedor.';
-} else {
-    echo 'Contenedor creado exitosamente.';
-}
 ?>
