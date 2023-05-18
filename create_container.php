@@ -1,16 +1,16 @@
 <?php
-
-require 'vendor/autoload.php';
+require 'vendor/autoload.php'; // Carga la biblioteca Docker PHP
 
 use Docker\Docker;
-use Docker\ContainerCreateParams;
 
+// Crear una instancia de Docker
 $docker = new Docker();
 
-$params = new ContainerCreateParams();
-$params->setImage('nginx'); // Define la imagen del contenedor
-$params->setCmd(['/bin/bash', '-c', 'while true; do echo "Hello, Docker!"; sleep 1; done']); // Define el comando a ejecutar dentro del contenedor
+// Crear un nuevo contenedor
+$container = $docker->containerCreate(['Image' => 'ubuntu']);
 
-$container = $docker->containerCreate($params);
+// Obtener el ID del contenedor creado
+$containerId = $container['Id'];
 
-echo 'Contenedor creado con éxito. ID: ' . $container->getId() . PHP_EOL;
+// Devolver el ID del contenedor
+echo $containerId;
