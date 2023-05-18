@@ -1,24 +1,16 @@
 <?php
+
 require 'vendor/autoload.php';
 
 use Docker\Docker;
+use Docker\ContainerCreateParams;
 
-// Crea una instancia del cliente Docker
-$docker = Docker::create();
+$docker = new Docker();
 
-// Define los parámetros para crear un contenedor
-$containerName = 'mi-contenedor';
-$imageName = 'ubuntu:latest';
+$params = new ContainerCreateParams();
+$params->setImage('nginx'); // Define la imagen del contenedor
+$params->setCmd(['/bin/bash', '-c', 'while true; do echo "Hello, Docker!"; sleep 1; done']); // Define el comando a ejecutar dentro del contenedor
 
-// Crea el contenedor
-$container = $docker->containerCreate([
-    'Image' => $imageName,
-    'Cmd' => ['echo', 'Hola, Mundo!'],
-    'Name' => $containerName,
-]);
+$container = $docker->containerCreate($params);
 
-// Inicia el contenedor
-$docker->containerStart($container->getId());
-
-echo 'Contenedor creado y en ejecución.';
-?>
+echo 'Contenedor creado con éxito. ID: ' . $container->getId() . PHP_EOL;
