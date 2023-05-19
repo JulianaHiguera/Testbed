@@ -1,0 +1,22 @@
+{
+    "name": "julitestbed/testbed",
+    "autoload": {
+        "psr-4": {
+            "Julitestbed\\Testbed\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "julianaHiguera",
+            "email": "zhiguera@unbosque.edu.co"
+        }
+    ],
+    "require": {
+        "docker-php/docker-php": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
