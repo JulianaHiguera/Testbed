@@ -32,7 +32,7 @@
       </form>
     </div>
   </div>
-  <form action="crear-contenedor.php" method="post">
+  <form action="create-container.php" method="post">
     <label for="sistema-operativo">Selecciona el sistema operativo:</label>
     <select name="sistema-operativo" id="sistema-operativo">
       <option value="ubuntu">Ubuntu</option>

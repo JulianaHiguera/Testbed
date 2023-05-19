@@ -2,4 +2,4 @@
 
 # Comandos para crear la imagen de docker
 
-sudo docker run hello-world
+sudo docker run ubuntu
