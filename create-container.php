@@ -7,8 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $command = "echo '$password' | sudo -S ./crar_imagen.sh '$sistemaOperativo' '$duracion'";
 
     // Mostrar la alerta de contenedor creado antes de ejecutar el comando
-    echo "<script>
-        <h3>El contenedor $sistemaOperativo ha sido creado por $duracion segundos....</h3>
+    echo "
+    <h3>El contenedor $sistemaOperativo ha sido creado por $duracion segundos....</h3>
+    <script>        
         alert('El contenedor $sistemaOperativo sera creado por $duracion segundos.');
 
         // Ejecutar el comando después de que el usuario acepte la alerta
