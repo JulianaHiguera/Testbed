@@ -48,9 +48,9 @@
 
           <label for="duracion">Selecciona la duración:</label>
           <select name="duracion" id="duracion">
-            <option value="10">10 minutos</option>
-            <option value="20">20 minutos</option>
-            <option value="30">30 minutos</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
             <!-- Agrega más opciones según tus necesidades -->
           </select>
           <input type="submit" value="Crear contenedor">

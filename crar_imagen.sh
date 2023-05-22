@@ -1,23 +1,23 @@
 #!/bin/bash
 
 # Comandos para crear la imagen de docker
-
-# Nombre de la imagen y del contenedor
-IMAGE_NAME="ubuntu"
-CONTAINER_NAME="imagen_de_prueba"
-
 # Tiempo por defecto (en segundos)
-DEFAULT_TIME=3600  # 1 hora
+DEFAULT_TIME=30  # 1 hora
 
-# Verificar si se especificó un tiempo personalizado
-if [ $# -eq 1 ]; then
-    TIME=$1
+# Verificar si se especificaron el sistema operativo y el tiempo personalizados
+if [ $# -eq 2 ]; then
+    OS=$1
+    TIME=$2
 else
-    TIME=$DEFAULT_TIME
+    OS="ubuntu"
+    TIME=$DEFAULT_TIME  # Tiempo por defecto (1 hora)
 fi
 
+# Generar un nombre único para el contenedor
+CONTAINER_NAME="mi_contenedor_$OS_$(date +%s)"  # Añade un timestamp al nombre
+
 # Crear el contenedor y ejecutarlo en segundo plano
-sudo docker run --detach --name $CONTAINER_NAME $IMAGE_NAME tail -f /dev/null
+sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
 
 # Esperar el tiempo especificado
 sleep $TIME
