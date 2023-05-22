@@ -5,7 +5,6 @@
   <title>Formulario de Reserva</title>
   <link rel="stylesheet" type="text/css" href="frontend/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="frontend/js/notificar_contenedor.js"></script>
 </head>
 
 <body>
@@ -44,15 +43,18 @@
           <select name="sistema-operativo" id="sistema-operativo">
             <option value="ubuntu">Ubuntu</option>
             <option value="debian">Debian</option>
-            <!-- Agrega más opciones según tus necesidades -->
+            <option value="centos">CentOS</option>
+            <option value="alpine">Alpine </option>
+            <option value="fedora">Fedora </option>
           </select>
 
           <label for="duracion">Selecciona la duración:</label>
           <select name="duracion" id="duracion">
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <!-- Agrega más opciones según tus necesidades -->
+            <option value="10">10 segundos</option>
+            <option value="20">20 segundos</option>
+            <option value="30">30 segundos</option>
+            <option value="60">1 minuto</option>
+            <option value="300">5 minutos</option>
           </select>
           <input type="submit" value="Crear contenedor">
         </form>
