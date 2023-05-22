@@ -2,4 +2,4 @@
 
 # Comandos para crear la imagen de docker
 
-sudo docker run ubuntu
+sudo docker run $1
