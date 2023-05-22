@@ -29,11 +29,11 @@
   </div>
   <div class="counter-container">
     <div class="counter">
-      <h2>scheduled sessions</h2>
+      <h2>Scheduled sessions</h2>
       <p>10</p> <!-- Aquí puedes reemplazar el número con el valor real de sesiones agendadas -->
     </div>
     <div class="counter">
-      <h2>total sessions</h2>
+      <h2>Total sessions</h2>
       <p>25</p> <!-- Aquí puedes reemplazar el número con el valor real de total de sesiones -->
     </div>
   </div>

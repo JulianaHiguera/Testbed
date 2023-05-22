@@ -18,20 +18,20 @@
     <?php
     include('frontend/includes/menu.php');
     ?>
-
-    <header>
-        <h1 class="titulo">Welcome to the platform Testbed</h1>
-    </header>
     <main>
-        <div class="contenedor-imagen">
-            <img src="frontend/images/imagen.png" alt="Imagen de la Página">
-        </div>
-        <div class="contenedor-resumen">
-            <p class="resumen">Welcome to the *** innovation, this is a beta relase of the new platform offers a new
-                high level controlling capacity for students, professors and researcges to learn about testbed.</p>
+        <div class="contenedor-resumen-imagen">
+            <h1 class="titulo">Welcome to the platform Testbed</h1>
+            <div class="imagen">
+                <img src="frontend/images/imagen.png" alt="Imagen de la Página">
+            </div>
+            <div class="contenedor-resumen">
+                <p class="resumen">Welcome to the *** innovation, this is a beta relase of the new platform offers a new
+                    high level controlling capacity for students, professors and researcges to learn about testbed.</p>
+            </div>
         </div>
     </main>
-    <script src="menu.js"></script>
+    <script src="frontend/js/menu.js"></script>
+    <script src="frontend/js/size.js"></script>
 </body>
 
 </html>

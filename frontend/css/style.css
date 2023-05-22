@@ -1,27 +1,12 @@
+/* Body */
 body {
-    background-color: white;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
   }
   
-  .title-container {
-    margin-top: 50px; /* Ajusta el valor del margen superior según tus necesidades */
-    text-align: center; /* Centra el texto horizontalmente */
-    margin-bottom: 20px; /* Aplica un margen inferior de 20px */
-}
-
-.title-container h1 {
-    margin: 0; /* Elimina el margen predeterminado del título */
-}
-
-  form {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    margin: 0 auto;
-  }
+/* Menu */
   .menu-icon i {
     transition: transform 0.3s ease;
     font-size: 24px; /* Agregar esta línea para ajustar el tamaño del icono */
@@ -64,6 +49,8 @@ body {
   
   .menu-items li {
     border-bottom: 1px solid #555;
+    padding: 2px 0;
+    margin: 1px 0;
   }
   
   .menu-items li a {
@@ -71,38 +58,13 @@ body {
     padding: 20px;
     color: #fff;
     text-decoration: none;
+    background-color: #333; 
   }
   
   .menu-items li a:hover {
     background-color: #555;
   }
-  
-  
-  label, input[type="submit"] {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"], input[type="password"] {
-    padding: 10px;
-    border: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    width: 95%;
-  }
-  
-  input[type="submit"] {
-    /* #4CAF50 */
-    background-color: #554; 
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-    
-   
+
     .menu-items li a span {
       display: none;
     }
@@ -110,6 +72,111 @@ body {
     .menu-items li a:hover span {
       display: inline-block;
     }
+
+/* Titulos */
+.title-container {
+  margin-top: 50px; /* Ajusta el valor del margen superior según tus necesidades */
+  text-align: center; /* Centra el texto horizontalmente */
+  margin-bottom: 20px; /* Aplica un margen inferior de 20px */
+}
+
+.title-container h1 {
+  margin: 0; /* Elimina el margen predeterminado del título */
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Fomulario */
+form {
+  background-color: #cccccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #333333;
+}
+
+/* Elementos del formulario */
+label, input[type="submit"] {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"], 
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+input[type="submit"] {
+  /* #4CAF50 */
+  background-color: #444444; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 12px;
+  width: 100%;
+}
+
+form input[type="submit"]:hover {
+  /* #45a049 */
+  background-color: #333333 ;
+}
+
+form label, 
+form input, 
+form textarea {
+  display: block;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+form input, 
+form textarea {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+/* formulario reserva*/
+.form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  background-color: #ccc;
+  border: 1px solid #999999; 
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin: 10px;
+
+}
+
+.form-card h2 {
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+
+.form-card form {
+  margin-top: 10px;
+  margin-right: 10px;
+
+}
+
     
 /* Estilos para los contadores con animaciones */
 @keyframes count-up {
@@ -139,19 +206,18 @@ body {
     animation-fill-mode: forwards;
     font-size: 36px; /* Tamaño de fuente */
     font-weight: bold; /* Peso de fuente */
-    color: #333; /* Color de fuente */
-    background-color: #f8f8f8; /* Color de fondo */
+    background-color: #cccccc; /* Color de fondo */
     padding: 10px 20px; /* Relleno */
     border-radius: 5px; /* Radio de borde */
     margin-top: 20px; /* Espacio superior de 20px */
     display: inline-block; /* Para que los contadores se muestren en línea */
     width: 350px; /* Cambia el valor según tus necesidades */
+    border: 1px solid #333333;
 }
 
 .counter p {
     font-size: 36px;
     /* #32CD32 */
-    color: #550; /* Color verdoso */
     margin-top: 10px;
     font-weight: bold;
     text-align: center;
@@ -159,65 +225,7 @@ body {
 }
 
 
-/* formulario reserva*/
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .form-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
 
-  }
-  
-  .form-card h2 {
-    margin-top: 10px;
-    margin-left: 10px;
-
-  }
-
-  .form-card form {
-    margin-top: 10px;
-    margin-right: 10px;
-
-  }
-  
-  form label, form input, form textarea {
-    display: block;
-    margin-bottom: 8px;
-    width: 100%;
-  }
-  
-  form input, form textarea {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 8px;
-  }
-  
-  form input[type="submit"] {
-    /* #4CAF50 */
-    background-color: #554;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    cursor: pointer;
-    margin-top: 16px;
-    padding: 12px;
-    width: 100%;
-  }
-  
-  form input[type="submit"]:hover {
-    /* #45a049 */
-    background-color: #553;
-  }
-  
   /* Reset de estilos de página */
 body, h1, p, img {
   margin: 0;
@@ -226,38 +234,50 @@ body, h1, p, img {
 
 /* Home */
 .titulo {
-  text-align: center;
-  margin-top: 50px;
+  margin-top: 0; 
+  flex-grow: 1;
+  font-size: 24px;
+  font-weight: bold;
   font-size: 36px;
-  color: #333;
+  color: #333333;
 }
 
 /* Contenedor de la imagen */
 .contenedor-imagen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden; /* Evita que la imagen se desborde */
+}
+
+/* Contenedor del resumen y la imagen */
+.contenedor-resumen-imagen {
   text-align: center;
-  margin-top: 50px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* Estilo de la imagen */
-img {
-  max-width: 100%;
-  height: auto;
-  width: 720px;
+.imagen {
+  max-height: 100%;
+  width: auto;
 }
 
-/* Contenedor del resumen */
-.contenedor-resumen {
-  text-align: center;
-  margin-top: 50px;
-  width: 80%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.imagen img {
+  max-height: 100%;
+  width: auto;  
+  padding: 10px;
 }
 
-/* Estilo del texto resumen */
+/* Estilo del resumen */
 .resumen {
   font-size: 18px;
   color: #666;
-  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
+  padding: 10px;
 }
