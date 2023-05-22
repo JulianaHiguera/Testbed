@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Mostrar la alerta de contenedor creado antes de ejecutar el comando
     echo "<script>
-        alert('El contenedor $sistemaOperativo ha sido creado por $duracion segundos.');
+        <h3>El contenedor $sistemaOperativo ha sido creado por $duracion segundos....</h3>
+        alert('El contenedor $sistemaOperativo sera creado por $duracion segundos.');
 
         // Ejecutar el comando después de que el usuario acepte la alerta
         setTimeout(function() {
