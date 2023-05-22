@@ -26,6 +26,9 @@
       <div id="error-message" style="display: none;"></div>
 
     </form>
+    <form method="get" action="registro.php">
+      <input type="submit" value="Register">
+    </form>
   </div>
   <div class="counter-container">
     <div class="counter">
@@ -37,7 +40,7 @@
       <p>25</p> <!-- Aquí puedes reemplazar el número con el valor real de total de sesiones -->
     </div>
   </div>
-  <script src="menu.js"></script>
+  <script src="frontend/js/menu.js"></script>
 </body>
 
 </html>
