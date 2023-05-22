@@ -5,6 +5,7 @@
   <title>Formulario de Reserva</title>
   <link rel="stylesheet" type="text/css" href="frontend/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="frontend/js/notificar_contenedor.js"></script>
 </head>
 
 <body>
@@ -59,7 +60,7 @@
     </div>
   </div>
 
-  <script src="menu.js"></script>
+  <script src="frontend/js/menu.js"></script>
 
   <!-- Agregar el archivo JavaScript de flatpickr -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
