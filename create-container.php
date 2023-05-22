@@ -5,28 +5,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $password = "juli";
     $command = "echo '$password' | sudo -S ./crar_imagen.sh '$sistemaOperativo' '$duracion'";
-    $output = shell_exec($command);
 
-    // Imprimir el código JavaScript para mostrar la alerta
+    // Mostrar la alerta de contenedor creado antes de ejecutar el comando
     echo "<script>
-        var confirmation = confirm('El contenedor $output será creado por $duracion minutos. ¿Deseas continuar?');
-        if (confirmation) {
-            // Si el usuario acepta, enviar el formulario
-            document.getElementById('myForm').submit();
-        } else {
-            // Si el usuario cancela, mostrar un mensaje de cancelación
-            alert('Operación cancelada.');
-        }
-    </script>";
+        alert('El contenedor $sistemaOperativo ha sido creado por $duracion segundos.');
 
-    // Detener la ejecución de PHP aquí para esperar la respuesta del usuario
-    exit();
+        // Ejecutar el comando después de que el usuario acepte la alerta
+        setTimeout(function() {
+            window.location.href = 'create-container.php?command=" . urlencode($command) . "';
+        }, 0);
+    </script>";
+}
+
+if (isset($_GET['command'])) {
+    // Ejecutar el comando almacenado en la variable $_GET['command']
+    $output = shell_exec($_GET['command']);
+
+    // Mostrar la alerta de eliminación después de ejecutar el comando
+    echo "<script>alert('El contenedor $output del sistema operativo $sistemaOperativo ha sido eliminado.');</script>";
+
+    echo $output;
 }
 ?>
-
-<!-- Resto de tu código HTML del formulario -->
-<div class="form-container">
-    <form id="myForm" action="create-container.php" method="post">
-        <!-- ... -->
-    </form>
-</div>
