@@ -52,6 +52,14 @@
     }
     ?>
 
+    <button onclick="goBack()">Atrás</button>
+
+    <script>
+        function goBack() {
+            history.back();
+        }
+    </script>
+
 </body>
 
 </html>

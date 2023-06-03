@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <h1>Debian</h1>
     <?php
     $command = "";
 

@@ -31,14 +31,22 @@ echo "$nuevo_valor" > numero.txt
 # Verificar el nuevo valor del archivo
 valor_actualizado=$(cat num.txt)
 
-cadena=" "$nuevo_valor":80 debian_accesible_3"
+
+if [ "$OS" == "debian" ]; then
+    cadena=" "$nuevo_valor":80 debian_accesible_3"
+elif [ "$OS" == "centos" ]; then
+    cadena=" "$nuevo_valor":80 centos_accesible_3"
+elif [ "$OS" == "alpine" ]; then
+    cadena=" "$nuevo_valor":80 alpine_accesible_3"
+elif [ "$OS" == "fedora" ]; then
+    cadena=" "$nuevo_valor":80 fedora_accesible_3"
+else
+    cadena=" "$nuevo_valor":80 ubuntu_accesible_3"
+fi
+
+sudo docker run --detach --name $CONTAINER_NAME -p $cadena
 echo $cadena
 
-if [ "$OS" == "debian"  ]; then
-    sudo docker run --detach --name $CONTAINER_NAME -p $cadena
-else
-    sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
-fi
 # Esperar el tiempo especificado
 sleep $TIME
 
