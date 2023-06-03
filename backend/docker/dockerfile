@@ -4,8 +4,15 @@ FROM debian:latest
 # Actualiza los paquetes del sistema
 RUN apt-get update
 
-# Instala un servidor web (por ejemplo, Nginx)
-RUN apt-get install -y nginx
+# Instala PHP y Nginx
+RUN apt-get install -y php-fpm nginx
+
+# Copia los archivos de configuración de PHP
+COPY php/www.conf /etc/php/7.4/fpm/pool.d/www.conf
+COPY php/php.ini /etc/php/7.4/fpm/php.ini
+
+# Copia los archivos de configuración de Nginx
+COPY nginx/default /etc/nginx/sites-available/default
 
 # Copia los archivos del sitio web al directorio raíz del servidor web
 COPY debian/ /var/www/html
@@ -13,5 +20,6 @@ COPY debian/ /var/www/html
 # Expone el puerto 80 para que sea accesible
 EXPOSE 80
 
-# Inicia el servidor web al iniciar el contenedor
-CMD ["nginx", "-g", "daemon off;"]
+# Inicia PHP-FPM y Nginx al iniciar el contenedor
+CMD service php7.4-fpm start && nginx -g "daemon off;"
+
