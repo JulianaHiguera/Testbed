@@ -35,7 +35,7 @@ cadena=" "$nuevo_valor":80 debian_accesible_3"
 echo $cadena
 
 if [ "$OS" == "debian"  ]; then
-    sudo docker run --detach --name $CONTAINER_NAME -p $cadena tail -f /dev/null
+    sudo docker run --detach --name $CONTAINER_NAME -p $cadena
 else
     sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
 fi
