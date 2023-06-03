@@ -37,7 +37,7 @@ echo "Valor actualizado: $valor_actualizado"
 
 
 if [ "$OS" == "debian"  ]; then
-    sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null -p $nuevo_valor:80 debian_accesible_3
+    sudo docker run --detach -p $nuevo_valor:80 debian_accesible_3 --name $CONTAINER_NAME $OS tail -f /dev/null 
 else
     sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
 fi
