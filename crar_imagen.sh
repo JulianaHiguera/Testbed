@@ -18,20 +18,20 @@ CONTAINER_NAME="mi_contenedor_${OS}_$(date +%s)"  # Añade un timestamp al nombr
 
 
 # Consultar el valor actual del archivo
-valor=$(cat num.txt)
+valor=$(cat numero.txt)
 echo "Valor actual: $valor"
 
 # Cambiar el valor del archivo
 nuevo_valor=$((valor + 1))
-echo "$nuevo_valor" > num.txt
+echo "$nuevo_valor" > numero.txt
 
 # Incrementar el valor en 1
 
 # Actualizar el valor en el archivo
-echo "$nuevo_valor" > archivo.txt
+echo "$nuevo_valor" > numero.txt
 
 # Verificar el nuevo valor del archivo
-valor_actualizado=$(cat archivo.txt)
+valor_actualizado=$(cat num.txt)
 echo "Valor actualizado: $valor_actualizado"
 
 
