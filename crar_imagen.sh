@@ -19,11 +19,9 @@ CONTAINER_NAME="mi_contenedor_${OS}_$(date +%s)"  # Añade un timestamp al nombr
 
 # Consultar el valor actual del archivo
 valor=$(cat numero.txt)
-echo "Valor actual: $valor"
 
 # Cambiar el valor del archivo
 nuevo_valor=$((valor + 1))
-echo "$nuevo_valor" > numero.txt
 
 # Incrementar el valor en 1
 
@@ -32,12 +30,12 @@ echo "$nuevo_valor" > numero.txt
 
 # Verificar el nuevo valor del archivo
 valor_actualizado=$(cat num.txt)
-echo "Valor actualizado: $valor_actualizado"
 
-
+cadena=" "$variable":80 debian_accesible_3"
+echo $cadena
 
 if [ "$OS" == "debian"  ]; then
-    sudo docker run --detach -p $nuevo_valor:80 debian_accesible_3 --name $CONTAINER_NAME $OS tail -f /dev/null 
+    sudo docker run --detach --name $CONTAINER_NAME -p $cadena tail -f /dev/null
 else
     sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
 fi
