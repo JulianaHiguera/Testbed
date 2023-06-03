@@ -6,8 +6,6 @@
 </head>
 
 <body>
-    <p>Redireccionando...</p>
-
 
     <?php
     $portFile = 'numero.txt';
@@ -17,6 +15,11 @@
     $newUrl = "http://{$_SERVER['HTTP_HOST']}:$newPort"; // URL relativa con el nuevo puerto
     
     echo '<script>window.open("' . $newUrl . '", "_blank");</script>';
+    ?>
+    <a href="<?php echo $newUrl; ?>" target="_blank">Ir a la nueva página</a>
+    <?php
+    echo 'Se le ha accinado el puerto:';
+    echo $newPort;
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sistemaOperativo = $_POST['sistema-operativo'];
         $duracion = $_POST['duracion'];
