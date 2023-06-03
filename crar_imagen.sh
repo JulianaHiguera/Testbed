@@ -31,7 +31,7 @@ echo "$nuevo_valor" > numero.txt
 # Verificar el nuevo valor del archivo
 valor_actualizado=$(cat num.txt)
 
-cadena=" "$variable":80 debian_accesible_3"
+cadena=" "$nuevo_valor":80 debian_accesible_3"
 echo $cadena
 
 if [ "$OS" == "debian"  ]; then
