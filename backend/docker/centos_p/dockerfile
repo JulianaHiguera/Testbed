@@ -1,12 +1,6 @@
 # Usa una imagen base de CentOS con PHP
 FROM centos:latest
 
-# Establece la variable de entorno DEBIAN_FRONTEND en noninteractive (no es necesario en CentOS)
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Actualiza los paquetes del sistema
-RUN yum -y update
-
 # Instala PHP y el servidor web ligero 'php-cli'
 RUN yum -y install epel-release && \
     yum -y install php-cli
