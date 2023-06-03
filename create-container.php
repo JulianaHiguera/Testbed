@@ -2,21 +2,7 @@
 <html>
 
 <head>
-    <script>
-        window.onload = function () {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    var port = parseInt(this.responseText) + 1; // Incrementa el número de puerto en 1
-                    var redirectUrl = "http://" + window.location.hostname + ":" + port;
-                    var newTab = window.open(redirectUrl, '_blank');
-                    newTab.focus();
-                }
-            };
-            xmlhttp.open("GET", "numero.txt", true);
-            xmlhttp.send();
-        };
-    </script>
+
 </head>
 
 <body>
@@ -24,6 +10,13 @@
 
 
     <?php
+    $portFile = 'numero.txt';
+    $port = file_get_contents($portFile); // Leer el puerto desde el archivo
+    $newPort = intval($port) + 1; // Sumar uno al puerto obtenido
+    
+    $newUrl = "http://{$_SERVER['HTTP_HOST']}:$newPort"; // URL relativa con el nuevo puerto
+    
+    echo '<script>window.open("' . $newUrl . '", "_blank");</script>';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sistemaOperativo = $_POST['sistema-operativo'];
         $duracion = $_POST['duracion'];
