@@ -8,7 +8,7 @@ RUN apt-get update
 RUN apt-get install -y nginx
 
 # Copia los archivos del sitio web al directorio raíz del servidor web
-COPY sitio_web/ /var/www/html
+COPY debian/ /var/www/html
 
 # Expone el puerto 80 para que sea accesible
 EXPOSE 80
