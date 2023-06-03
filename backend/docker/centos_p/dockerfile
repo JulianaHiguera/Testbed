@@ -1,6 +1,9 @@
 # Usa una imagen base de CentOS con PHP
 FROM centos:latest
 
+# Establece la variable de entorno DEBIAN_FRONTEND en noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Actualiza los paquetes del sistema
 RUN yum -y update
 
@@ -18,5 +21,4 @@ WORKDIR /var/www/html
 
 # Inicia el servidor web incorporado de PHP
 CMD php -S 0.0.0.0:80
-
 

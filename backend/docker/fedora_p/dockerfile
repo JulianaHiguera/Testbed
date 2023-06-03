@@ -1,6 +1,9 @@
 # Usa una imagen base de Fedora con PHP
 FROM fedora:latest
 
+# Establece la variable de entorno DEBIAN_FRONTEND en noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Actualiza los paquetes del sistema
 RUN dnf -y update
 

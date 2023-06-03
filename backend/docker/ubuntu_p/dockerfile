@@ -1,5 +1,8 @@
-# Usa una imagen base de Debian con PHP
+# Usa una imagen base de Ubuntu con PHP
 FROM ubuntu:latest
+
+# Establece la variable de entorno DEBIAN_FRONTEND en noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Actualiza los paquetes del sistema
 RUN apt-get update
@@ -18,4 +21,3 @@ WORKDIR /var/www/html
 
 # Inicia el servidor web incorporado de PHP
 CMD php -S 0.0.0.0:80
-

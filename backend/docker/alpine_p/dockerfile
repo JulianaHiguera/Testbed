@@ -1,6 +1,9 @@
 # Usa una imagen base de Alpine con PHP
 FROM alpine:latest
 
+# Establece la variable de entorno DEBIAN_FRONTEND en noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Actualiza los paquetes del sistema
 RUN apk update
 
@@ -18,4 +21,3 @@ WORKDIR /var/www/html
 
 # Inicia el servidor web incorporado de PHP
 CMD php -S 0.0.0.0:80
-
