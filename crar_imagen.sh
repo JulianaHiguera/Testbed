@@ -16,9 +16,11 @@ fi
 # Generar un nombre único para el contenedor
 CONTAINER_NAME="mi_contenedor_${OS}_$(date +%s)"  # Añade un timestamp al nombre
 
-# Crear el contenedor y ejecutarlo en segundo plano
-sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
-
+if [ "$OS" == "debian"  ]; then
+    sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
+else
+    sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
+fi
 # Esperar el tiempo especificado
 sleep $TIME
 
