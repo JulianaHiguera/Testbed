@@ -1,14 +1,14 @@
 # Usa una imagen base de Alpine con PHP
 FROM alpine:latest
 
-# Establece la variable de entorno DEBIAN_FRONTEND en noninteractive
+# Establece la variable de entorno DEBIAN_FRONTEND en noninteractive (no es necesario en Alpine)
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Actualiza los paquetes del sistema
 RUN apk update
 
-# Instala PHP y el servidor web ligero 'php-cli'
-RUN apk add --no-cache php7-cli
+# Instala PHP y el servidor web ligero
+RUN apk add --no-cache php7 php7-fpm
 
 # Copia los archivos del sitio web al directorio raíz del servidor web
 COPY alpine/ /var/www/html
