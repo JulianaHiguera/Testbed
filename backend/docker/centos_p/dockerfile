@@ -3,7 +3,7 @@ FROM centos:latest
 
 # Instala PHP y el servidor web ligero 'php-cli'
 RUN yum -y install epel-release && \
-    yum -y install php-cli.x86_64
+    yum -y install php
 
 # Copia los archivos del sitio web al directorio raíz del servidor web
 COPY centos/ /var/www/html
