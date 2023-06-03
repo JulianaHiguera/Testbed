@@ -7,13 +7,6 @@ RUN apt-get update
 # Instala PHP y Nginx
 RUN apt-get install -y php-fpm nginx
 
-# Copia los archivos de configuración de PHP
-COPY php/www.conf /etc/php/7.4/fpm/pool.d/www.conf
-COPY php/php.ini /etc/php/7.4/fpm/php.ini
-
-# Copia los archivos de configuración de Nginx
-COPY nginx/default /etc/nginx/sites-available/default
-
 # Copia los archivos del sitio web al directorio raíz del servidor web
 COPY debian/ /var/www/html
 
