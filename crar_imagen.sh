@@ -13,14 +13,11 @@ else
     TIME=$DEFAULT_TIME  # Tiempo por defecto (1 hora)
 fi
 
-CONTAINER_NAME="mi_contenedor_${OS}_$(date +%s)"
-if $OS == 'debian'{
-    sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null -p 90:80 debian_accesible_3;
-} 
-else {
-     sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null;
-}
-    
+# Generar un nombre único para el contenedor
+CONTAINER_NAME="mi_contenedor_${OS}_$(date +%s)"  # Añade un timestamp al nombre
+
+# Crear el contenedor y ejecutarlo en segundo plano
+sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
 
 # Esperar el tiempo especificado
 sleep $TIME
