@@ -21,6 +21,7 @@ if $OS == "debian":
 else
     CONTAINER_NAME="mi_contenedor_${OS}_$(date +%s)" 
     sudo docker run --detach --name $CONTAINER_NAME $OS tail -f /dev/null
+fi
 # Generar un nombre único para el contenedor
 
 
