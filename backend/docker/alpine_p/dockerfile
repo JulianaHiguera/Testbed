@@ -3,8 +3,8 @@ FROM alpine:latest
 # Actualiza los paquetes del sistema
 RUN apk update
 
-# Instala PHP y el servidor web ligero 'php-fpm'
-RUN apk add --no-cache php8 php8-fpm
+# Instala PHP y el servidor web ligero 'php7-fpm' desde el repositorio 'community'
+RUN apk add --no-cache php7 php7-fpm --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
 # Copia los archivos del sitio web al directorio raíz del servidor web
 COPY alpine/ /var/www/html
@@ -15,5 +15,5 @@ EXPOSE 80
 # Establece el directorio de trabajo
 WORKDIR /var/www/html
 
-# Inicia el servidor web incorporado de PHP
-CMD ["php-fpm8", "--nodaemonize"]
+# Inicia el servidor web incorporado de PHP-FPM
+CMD php-fpm7 --nodaemonize --fpm-config /etc/php7/php-fpm.conf
