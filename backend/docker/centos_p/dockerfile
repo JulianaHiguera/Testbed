@@ -1,5 +1,8 @@
 FROM centos:latest
 
+# Configurar repositorios EPEL
+RUN yum install -y epel-release
+
 # Actualiza los paquetes del sistema
 RUN yum update -y
 
